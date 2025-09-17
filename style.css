@@ -1,0 +1,57 @@
+/* ==============================
+   Part 1: CSS3 Transitions & Animations
+   ============================== */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Button with hover transition */
+.btn {
+  padding: 12px 20px;
+  margin: 5px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  background: #0056cc;
+  transform: scale(1.05);
+}
+
+/* Box that will animate */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Triggered by JS (slide effect) */
+.box.slide {
+  transform: translateX(200px);
+  opacity: 0.5;
+}
+
+/* Keyframe animation for pulsing */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); background: gold; }
+  100% { transform: scale(1); }
+}
+
+/* Applied when JS toggles the class */
+.pulse {
+  animation: pulse 1s infinite;
+}
